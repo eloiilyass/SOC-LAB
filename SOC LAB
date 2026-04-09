@@ -1,0 +1,56 @@
+# 🔐 Wazuh SOC Lab
+
+## 📌 Project Overview
+
+This project demonstrates a complete SOC (Security Operations Center) lab using Wazuh SIEM.
+
+## 🧱 Architecture
+
+* Wazuh Server (Ubuntu 22.04)
+* Windows 10 Client (Agent)
+* Web Dashboard (HTTPS)
+
+## ⚙️ Setup
+
+* Installed Wazuh all-in-one (Indexer + Manager + Dashboard)
+* Connected Windows agent
+* Enabled Windows auditing (auditpol)
+
+## 🧪 Tests Performed
+
+### 1. Failed Login Detection
+
+* Simulated failed login attempts
+* Detected Event ID 4625 in Wazuh
+
+### 2. Privilege Escalation Detection
+
+* Detected "Failed attempt to perform a privileged operation"
+
+### 3. Command Execution
+
+* Executed commands via PowerShell / CMD
+* Observed logs in Wazuh dashboard
+
+## 📊 Results
+
+* Real-time monitoring working
+* Alerts generated successfully
+* SOC environment fully functional
+
+## 🧠 Skills Gained
+
+* SIEM (Wazuh)
+* Windows Security Monitoring
+* Log Analysis
+* Cybersecurity Basics
+
+## 📸 Screenshots
+
+(see /screenshots folder)
+
+## 🚀 Future Improvements
+
+* Add Sysmon
+* Add Linux agents
+* Simulate advanced attacks
