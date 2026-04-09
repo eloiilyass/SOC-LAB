@@ -71,23 +71,23 @@ Password: <generated-password>
 
 ### 🔐 Login
 
-![Login](screenshots/login.png)
+![Login](login.png)
 
 ### ✅ Health Check
 
-![Health](screenshots/health-check.png)
+![Health](health-check.png)
 
 ### 📊 Dashboard
 
-![Dashboard](screenshots/dashboard-overview.png)
+![Dashboard](dashboard-overview.png)
 
 ### 💻 Agent Connected
 
-![Agent](screenshots/agent-connected.png)
+![Agent](agent-connected.png)
 
 ### 🚨 Security Alerts
 
-![Alerts](screenshots/security-alerts.png)
+![Alerts](security-alerts.png)
 
 ---
 
