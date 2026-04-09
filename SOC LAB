@@ -4,53 +4,119 @@
 
 This project demonstrates a complete SOC (Security Operations Center) lab using Wazuh SIEM.
 
+The lab includes a Wazuh server (Ubuntu) and a Windows 10 agent to simulate real-world security monitoring.
+
+---
+
 ## 🧱 Architecture
 
-* Wazuh Server (Ubuntu 22.04)
-* Windows 10 Client (Agent)
-* Web Dashboard (HTTPS)
+* 🐧 Ubuntu 22.04 → Wazuh Server (Manager + Indexer + Dashboard)
+* 🪟 Windows 10 → Wazuh Agent
+* 🌐 Web Interface → HTTPS Dashboard
 
-## ⚙️ Setup
+---
 
-* Installed Wazuh all-in-one (Indexer + Manager + Dashboard)
-* Connected Windows agent
-* Enabled Windows auditing (auditpol)
+## ⚙️ Installation
+
+### 1. Install Wazuh on Ubuntu
+
+```bash
+sudo apt update && sudo apt install curl -y
+curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+sudo bash wazuh-install.sh -a
+```
+
+---
+
+### 2. Access Dashboard
+
+```
+https://<server-ip>:443
+User: admin
+Password: <generated-password>
+```
+
+---
+
+### 3. Install Windows Agent
+
+* Download Wazuh agent
+* Configure manager IP
+* Start service
+
+---
 
 ## 🧪 Tests Performed
 
-### 1. Failed Login Detection
+### 🔴 Failed Login Detection
 
-* Simulated failed login attempts
-* Detected Event ID 4625 in Wazuh
+* Enabled Windows auditing (auditpol)
+* Generated failed login attempts
+* Detected in Wazuh (Event ID 4625)
 
-### 2. Privilege Escalation Detection
+### 🟠 Privilege Escalation Attempt
 
-* Detected "Failed attempt to perform a privileged operation"
+* Triggered privileged operation
+* Detected alert:
 
-### 3. Command Execution
+> Failed attempt to perform a privileged operation
 
-* Executed commands via PowerShell / CMD
-* Observed logs in Wazuh dashboard
+### 🟡 Log Monitoring
+
+* Real-time logs collected from Windows agent
+
+---
+
+## 📸 Screenshots
+
+### 🔐 Login
+
+![Login](screenshots/login.png)
+
+### ✅ Health Check
+
+![Health](screenshots/health-check.png)
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/dashboard-overview.png)
+
+### 💻 Agent Connected
+
+![Agent](screenshots/agent-connected.png)
+
+### 🚨 Security Alerts
+
+![Alerts](screenshots/security-alerts.png)
+
+---
 
 ## 📊 Results
 
-* Real-time monitoring working
-* Alerts generated successfully
-* SOC environment fully functional
+* ✅ Wazuh deployed successfully
+* ✅ Agent connected and monitored
+* ✅ Security events detected in real-time
+* ✅ SOC environment fully functional
+
+---
 
 ## 🧠 Skills Gained
 
 * SIEM (Wazuh)
-* Windows Security Monitoring
 * Log Analysis
+* Windows Security Monitoring
 * Cybersecurity Basics
 
-## 📸 Screenshots
-
-(see /screenshots folder)
+---
 
 ## 🚀 Future Improvements
 
-* Add Sysmon
+* Add Sysmon for advanced logging
 * Add Linux agents
-* Simulate advanced attacks
+* Simulate real cyber attacks (Brute force, PowerShell attacks)
+
+---
+
+## 👨‍💻 Author
+
+* Ilyas Elouarrari
